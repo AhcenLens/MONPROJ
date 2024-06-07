@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos - Ahcen's Lens</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="photos/header.jpg" alt="En-tête" class="header-image">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Galerie de photos</h2>
+        <div class="gallery">
+            <img src="photos/1.jpg" alt="Photo 1">
+            <img src="photos/2.jpg" alt="Photo 2">
+            <img src="photos/3.jpg" alt="Photo 3">
+            <img src="photos/4.jpg" alt="Photo 4">
+            <img src="photos/5.jpg" alt="Photo 5">
+            <img src="photos/6.jpg" alt="Photo 6">
+            <img src="photos/7.jpg" alt="Photo 7">
+            <img src="photos/8.jpg" alt="Photo 8">
+            <img src="photos/9.jpg" alt="Photo 9">
+            <img src="photos/10.jpg" alt="Photo 10">
+            <img src="photos/11.jpg" alt="Photo 11">
+            <img src="photos/12.jpg" alt="Photo 12">
+            <img src="photos/13.jpg" alt="Photo 13">
+            <img src="photos/14.jpg" alt="Photo 14">
+            <img src="photos/15.jpg" alt="Photo 15">
+            <img src="photos/16.jpg" alt="Photo 16">
+            <img src="photos/17.jpg" alt="Photo 17">
+            <img src="photos/18.jpg" alt="Photo 18">
+            <img src="photos/19.jpg" alt="Photo 19">
+            <img src="photos/20.jpg" alt="Photo 20">
+            <img src="photos/21.jpg" alt="Photo 21">
+            <img src="photos/22.jpg" alt="Photo 22">
+        </div>
+        <button onclick="window.history.back()">Retour</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ahcen's Lens</p>
+    </footer>
+
+    <!-- La modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Script pour la modal -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtenir la modal
+        var modal = document.getElementById("myModal");
+
+        // Obtenir l'image dans la modal et le contenu de l'image
+        var modalImg = document.getElementById("img01");
+
+        // Obtenir toutes les images dans la galerie
+        var images = document.querySelectorAll(".gallery img");
+
+        // Ajouter des événements de clic à chaque image
+        images.forEach(function(image) {
+            image.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Obtenir l'élément <span> qui ferme la modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quand l'utilisateur clique sur <span> (x), fermer la modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>

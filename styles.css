@@ -1,0 +1,153 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat */
+    margin: 0;
+    padding: 0;
+}
+
+.header-image {
+    width: 100%; /* Définit la largeur de l'image à 80% de la largeur de son conteneur parent */
+    height: auto; /* Maintient le ratio d'aspect de l'image */
+    border-radius: 10%; /* Ajoute des coins arrondis à l'image */
+    /*border: 2px solid #fff; /* Ajoute une bordure blanche de 2px autour de l'image */
+    display: block; /* Rend l'image un bloc pour faciliter le centrage */
+    margin: 20px auto; /* Centre l'image horizontalement et ajoute une marge de 20px en haut et en bas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour un effet visuel */
+    transition: transform 0.3s ease-in-out; /* Ajoute une transition pour un effet de survol */
+}
+
+
+/* Effet de survol */
+.header-image:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5cm;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img {
+    width: calc((100% - 1.5cm) / 4); /* Ajuste la largeur pour 4 images par ligne en tenant compte de l'espace entre elles */
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effet de survol pour les images de la galerie */
+.gallery img:hover {
+    transform: scale(1.2); /* Agrandit légèrement l'image au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Accentue l'ombre portée au survol */
+    border: 2px solid #5dfc01;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #310101;
+}
+
+.portrait-photo {
+    display: block;
+    margin: 20px auto;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: auto;
+    border-radius: 50%; /* Pour une image circulaire */
+    border: 2px solid #fff; /* Pour une bordure blanche */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Pour un effet d'ombre */
+}
+
+/* Styles pour la modal */
+.modal {
+    display: none; /* Cache la modal par défaut */
+    position: fixed; /* Positionne la modal de manière fixe */
+    z-index: 1; /* Assure que la modal est au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largeur de la modal */
+    height: 100%; /* Hauteur de la modal */
+    overflow: auto; /* Permet le défilement si nécessaire */
+    background-color: rgba(0, 0, 0, 0.9); /* Fond noir avec opacité */
+}
+
+/* Contenu de la modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* L'image dans la modal */
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Fermer la modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
